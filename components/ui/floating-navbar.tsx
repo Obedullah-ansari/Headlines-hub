@@ -21,7 +21,7 @@ export const FloatingNav = ({
   }[];
   className?: string;
   showmodal: () => void;
-  photo:string|null|StaticImageData,
+  photo:string| StaticImageData,
   authetification: string | null;
 }) => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
