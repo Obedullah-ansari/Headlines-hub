@@ -39,7 +39,7 @@ export function FloatingNavHero() {
 
   interface UserData {
     name: string;
-    image: string | StaticImageData | null;
+    image: string | StaticImageData ;
     email: string;
   }
   const dispatch = useDispatch();
