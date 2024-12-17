@@ -123,7 +123,7 @@ function Review() {
     } else alert("somethig went wrong");
 
 }
-console.log(userReviewExists)
+
   return (
     <>
       <div className="  top-[25%] h-[50%] w-full flex flex-col gap-2 justify-center items-center absolute">

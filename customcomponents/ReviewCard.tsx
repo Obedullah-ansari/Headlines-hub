@@ -29,7 +29,7 @@ const Reviewcard: React.FC<{
       </div>
       <div className="flex max-sm:h-[70%] bg-neutral-800 flex-col max-sm:w-[100%]  text-pretty max-sm:gap-3 gap-3 justify-center items-start p-3 h-full w-[24rem]">
         <h1 className="text-[1.6rem] max-sm:w-full max-sm:text-[1rem]">
-          {name.toUpperCase()}
+         {name?.toUpperCase()}
         </h1>
         <p className="max-sm:text-[0.8rem]">{text}</p>
       </div>

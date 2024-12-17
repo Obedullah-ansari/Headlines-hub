@@ -3,9 +3,8 @@ interface FeedType {
 }
 
 interface TopFiveItem {
-  id: string;
-  title: string;
-  // Add any other properties you expect here
+  topheadline :string
+  
 }
 
 interface FeedResponse {
@@ -22,10 +21,8 @@ async function topfeed({ topNewsId }: FeedType): Promise<FeedResponse> {
   );
 
   const data = await response.json();
-
   if (response.ok) {
-    // Ensure you return the correctly shaped data
-    return { topfive: data.topfive || [] };
+    return data
   }
 
   // Handle the error by returning a default response or throwing an error
