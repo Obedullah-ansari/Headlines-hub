@@ -14,9 +14,15 @@ import openbtn from "@/public/jigsaw.png";
 import SideNavbar from "@/customcomponents/SideNavBar";
 import {motion} from  "framer-motion"
 
+interface headline{
+  headline :string,
+  imageUrl :string,
+  href :string
+}
+
 export default function HeadlinesPage() {
   const [openNav, setOpenNav] = useState<boolean>(false);
-  const [newsHeadlines, setNewsHeadlines] = useState<any[]>([]);
+  const [newsHeadlines, setNewsHeadlines] = useState<headline[]>([]);
   const [id, setId] = useState<string>("TOI");
   const [newsType, setNewsType] = useState<string>("national");
   const [authAlert, setAuthAlert] = useState<string | null>(null);

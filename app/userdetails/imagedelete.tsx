@@ -13,7 +13,6 @@ export default async function handleImageDelete(): Promise<string | null> {
           );
 
       if (response.ok) {
-        const updatedData = await response.json();
         return null
       } else {
         const errorMessage = await response.text();

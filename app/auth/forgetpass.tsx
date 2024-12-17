@@ -3,7 +3,7 @@
 export default async function forgetpassword(email :string){
     const URL = process.env.NEXT_PUBLIC_API_URL;
     try {
-        const response = await fetch(`https://newhuboa-wwokpxse.b4a.run/api/v1/auth/forgetpassword`, {
+        const response = await fetch(`${URL}api/v1/auth/forgetpassword`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
