@@ -38,7 +38,7 @@ const Topfeeds: React.FC<{
       try {
         const data = await topfeed({ topNewsId });
         if (data) {
-          setFeedData(data);
+          setFeedData(data.topfive);
         }
       } catch (error) {
         console.error("Error fetching top feeds:", error);
