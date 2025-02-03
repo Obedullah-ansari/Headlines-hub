@@ -1,4 +1,3 @@
-import defimg from "@/public/ht.jpeg";
 
 export default async function userdetails() {
   const URL = process.env.NEXT_PUBLIC_API_URL;
