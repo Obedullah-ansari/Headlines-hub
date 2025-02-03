@@ -2,16 +2,16 @@
 import { useEffect, useState } from "react";
 import { fetchNewsHeadlines } from "./headlinesnational";
 import { fetchNewsHeadlinesGlobal } from "./headlinesglobal";
-import Navbar from "@/customcomponents/Navbar";
-import Newscard from "@/customcomponents/Newscard";
+import Navbar from "@/customcomponents/NewsSection/Navbar";
+import Newscard from "@/customcomponents/NewsSection/Newscard";
 import Modaloverlay from "@/customcomponents/Modaloverlay";
-import Notepad from "@/customcomponents/Notepad";
+import Notepad from "@/customcomponents/NewsSection/Notepad";
 import { AnimatePresence, easeInOut } from "framer-motion";
 import searchheadlines from "@/app/search/searchheadlines";
 import searchlogo from "@/public/search.png";
 import Image from "next/image";
 import openbtn from "@/public/jigsaw.png";
-import SideNavbar from "@/customcomponents/SideNavBar";
+import SideNavbar from "@/customcomponents/NewsSection/SideNavBar";
 import {motion} from  "framer-motion"
 
 interface headline{
@@ -19,6 +19,7 @@ interface headline{
   imageUrl :string,
   href :string
 }
+console.log(process.env.NEXT_PUBLIC_API_URL)
 
 export default function HeadlinesPage() {
   const [openNav, setOpenNav] = useState<boolean>(false);
@@ -121,9 +122,9 @@ export default function HeadlinesPage() {
       {
         <>
           <div
-            className={`pt-[2%] max-sm:rounded-none rounded-s-[3rem] h-full  max-sm:mt-[30%] mt-[13%] bg-neutral-800 w-full`}
+            className={`pt-[2%] max-sm:rounded-none rounded-s-[3rem] h-full  max-sm:mt-[30%] mt-[13%] max-sm:bg-neutral-950 bg-neutral-800 w-full`}
           >
-            <div className="top-0 max-sm:w-full w-[80%] max-sm:h-[10%] h-[12%] absolute">
+            <div className="top-0 max-sm:w-full w-[80%]  h-[12%]  absolute">
               <motion.button
               initial={{rotate:0}}
               whileTap={{rotate:180 , transition:{duration:0.3 ,ease:easeInOut}  }}
@@ -134,11 +135,11 @@ export default function HeadlinesPage() {
               </motion.button>
               <form
                 onSubmit={handelSearchNews}
-                className="h-full gap-3 max-sm:gap-2 p-1 w-full justify-center flex items-center"
+                className="h-full  max-sm:pt-8 gap-2  sm:pt-3 lg:pt-4 w-full justify-center flex items-start"
               >
                 <input
                   type="text"
-                  className="searchbar  max-sm:w-[65%] max-sm:h-[60%] bg-neutral-800 pl-5 h-[50%] w-[80%] rounded-full"
+                  className="searchbar  max-sm:w-[65%] max-sm:h-[60%] bg-neutral-800 pl-5 sm:h-[30%] md:h-[50%] lg:h-[60%] w-[80%] rounded-full"
                   placeholder="Search headlines..."
                   value={searchQuery}
                   onChange={(e) => {

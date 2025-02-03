@@ -48,8 +48,12 @@ export function BackgroundLinesDemo() {
         dispatch({ type: "user", payload: data.data.newUser._id });
         window.location.href = "/";
       }
-    } catch (err) {
-      setError("Sign-up failed. Please try again.");
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setError(error.message); 
+      } else {
+        setError("Something went wrong during sign up");
+      }
     }
   };
 

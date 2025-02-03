@@ -7,11 +7,9 @@ interface TopFiveItem {
   
 }
 
-interface FeedResponse {
-  topfive: TopFiveItem[];
-}
 
-async function topfeed({ topNewsId }: FeedType): Promise<FeedResponse> {
+
+async function topfeed({ topNewsId }: FeedType): Promise<TopFiveItem[]|null> {
   const URL = process.env.NEXT_PUBLIC_API_URL;
   const response = await fetch(
     `${URL}api/v1/headlines/topheadlines/${topNewsId}`,
@@ -26,7 +24,7 @@ async function topfeed({ topNewsId }: FeedType): Promise<FeedResponse> {
   }
 
   // Handle the error by returning a default response or throwing an error
-  return { topfive: [] }; // Return empty array as a fallback
+  return null; // Return empty array as a fallback
 }
 
 export default topfeed;

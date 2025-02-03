@@ -1,6 +1,6 @@
-import { FloatingNavHero } from "./FloatingNavHero";
+import { FloatingNavHero } from "@/customcomponents/HeroSection/FloatingNavHero";
 import Image from "next/image";
-import landingpageimg from "@/public/mordernain.png";
+import landingpageimg from "@/public/headpic.png";
 
 const Hero: React.FC = () => {
   return (

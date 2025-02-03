@@ -18,7 +18,7 @@ const Newscard: React.FC<{ img: string; text: string; link: string }> = ({
       whileInView={{opacity:1, transition:{duration:0.4}}}
       
       className="  max-sm:p-[2%] max-sm:h-[11rem] max-sm:w-[100%]  md:w-[43%] md:h-[12rem] lg:w-[20rem] lg:h-[11rem]  max-sm:m-[0.5rem] sm:m-[0.8rem] md:m-[1rem] lg:mt-[0.2%] p-[0.15%] rounded-lg">
-        <div className="bg-neutral-950 rounded-md h-[100%] w-full p-[0.5rem] ">
+        <div className="bg-neutral-950 max-sm:bg-neutral-900 rounded-md h-[100%] w-full p-[0.5rem] ">
          
          <div className="w-full  pt-2 max-sm:h-[75%] lg:h-[65%] flex flex-row justify-center items-center">
            <div className="h-full   w-[40%] pr-2">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import StarRating from "@/customcomponents/StarRating";
+import StarRating from "@/customcomponents/ReviewSection/StarRating";
 import defaultImage from "@/public/profile.png";
 
 

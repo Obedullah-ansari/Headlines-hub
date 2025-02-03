@@ -3,9 +3,9 @@ export default async function handleImageDelete(): Promise<string | null> {
     const token = localStorage.getItem("token");
     try {
         const response = await fetch(
-            `${URL}api/v1/auth/deletePhoto`,
+            `${URL}api/v1/image/deleteimages`,
             {
-              method: "DELETE",
+              method: "POST",
               headers: {
                 Authorization: `Bearer ${token}`,
               },
@@ -16,11 +16,11 @@ export default async function handleImageDelete(): Promise<string | null> {
         return null
       } else {
         const errorMessage = await response.text();
-        console.error("Error Message:", errorMessage);
+        console.log("Error Message:", errorMessage);
         throw new Error(errorMessage || "Image upload failed");
       }
     } catch (error) {
-      console.error("Upload error:", error);
+      console.log("Upload error:", error);
       return null;
     }
   }

@@ -16,7 +16,6 @@ import home from "@/public/home.png";
 import rating from "@/public/rating.png";
 import features from "@/public/jigsaw.png";
 import { useDispatch } from "react-redux";
-import Topfeeds from "./Topfeeds";
 
 export function FloatingNavHero() {
   const navItems = [
@@ -39,7 +38,7 @@ export function FloatingNavHero() {
 
   interface UserData {
     name: string;
-    image: string | StaticImageData | null;
+    image: string | StaticImageData ;
     email: string;
   }
   const dispatch = useDispatch();
@@ -196,8 +195,8 @@ export function FloatingNavHero() {
           <div className="flex bg-gray-400 justify-center items-center h-[25%]">
             <div className="flex relative  justify-center items-center w-[7rem] h-[7rem]">
               <Image
-                className="w-full h-full rounded-full"
-                src={userDetails.image || defaultimg}
+                className="w-full h-full object-cover rounded-full"
+                src={userDetails.image==="default.jpg" ? defaultimg : userDetails.image }
                 alt="user-image"
                 width={128}
                 height={128}
@@ -218,23 +217,11 @@ export function FloatingNavHero() {
           </div>
 
           <div className="flex overflow-hidden relative flex-col justify-start items-center h-[75%]">
-            <Topfeeds
-              open={() => setTopFeedOpen((prev) => !prev)}
-              value={topFeedOpen}
-            />
             <p className="text-red-500">{error}</p>
             <h1 className="text-[2rem]">
               <span className="welcometxt">Welcome</span> {userDetails.name}
             </h1>
             <span>{userDetails.email}</span>
-            <motion.button
-              initial={{ x: 0 }}
-              whileHover={{ x: 20, transition: { duration: 0.3 } }}
-              className="text-[1.4rem] relative top-10 p-1 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-700"
-              onClick={() => setTopFeedOpen((prev) => !prev)}
-            >
-              Top Feeds For You{" "}
-            </motion.button>
             <div className="absolute p-3  w-full bottom-0 flex  gap-5 justify-start items-center  ">
               <button onClick={() => setUserModal((prev) => !prev)}>
                 close
@@ -244,6 +231,7 @@ export function FloatingNavHero() {
               </button>
             </div>
           </div>
+          
         </motion.div>
         <input
           ref={fileInputRef}
@@ -257,7 +245,7 @@ export function FloatingNavHero() {
           navItems={navItems}
           showmodal={() => setUserModal((prev) => !prev)}
           authetification={auth}
-          photo={userDetails.image}
+          photo={userDetails.image==="default.jpg" ? defaultimg : userDetails.image}
         />
         <BackgroundBeamsWithCollisionHero />
       </div>

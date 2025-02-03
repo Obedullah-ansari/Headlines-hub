@@ -18,13 +18,9 @@ export default async function userdetails() {
     }
 
     const data = await response.json();
-    const userPhoto =
-      data.data.user.photo === "default.jpg"
-        ? defimg
-        : `${URL}uploads/users/${data.data.user.photo}`;
-
+  
     const userdata = {
-      image: userPhoto,
+      image: data.data.user.photo,
       name: data.data.user.name,
       email: data.data.user.email,
     };

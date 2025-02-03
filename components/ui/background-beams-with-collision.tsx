@@ -71,12 +71,13 @@ export const BackgroundBeamsWithCollision = ({
       ref={parentRef}
       className={cn(
         "h-96 md:h-[40rem] bg-black relative flex items-center w-full justify-center overflow-hidden",
+        // h-screen if you want bigger
         className
       )}
     >
-      {beams.map((beam, idx) => (
+      {beams.map((beam) => (
         <CollisionMechanism
-          key={`beam-${idx}`}
+          key={beam.initialX + "beam-idx"}
           beamOptions={beam}
           containerRef={containerRef}
           parentRef={parentRef}
@@ -207,6 +208,7 @@ const CollisionMechanism = React.forwardRef<
         {collision.detected && collision.coordinates && (
           <Explosion
             key={`${collision.coordinates.x}-${collision.coordinates.y}`}
+            className=""
             style={{
               left: `${collision.coordinates.x}px`,
               top: `${collision.coordinates.y}px`,

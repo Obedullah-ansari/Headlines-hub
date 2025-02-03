@@ -21,7 +21,7 @@ export const FloatingNav = ({
   }[];
   className?: string;
   showmodal: () => void;
-  photo:string|null|StaticImageData,
+  photo:string|StaticImageData,
   authetification: string | null;
 }) => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -109,7 +109,7 @@ export const FloatingNav = ({
               <Image 
                src={photo} 
                alt=""
-               className="w-[3rem] h-full rounded-full"
+               className="w-14 h-14 rounded-full object-cover"
                width={128}
                height={128} />
             </button>

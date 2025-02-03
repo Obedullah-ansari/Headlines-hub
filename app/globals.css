@@ -35,6 +35,11 @@ textarea:focus {
   outline: none;
   box-shadow: none;
 }
+textarea::placeholder{
+  font-size: 0.9rem;
+
+}
+
 input::placeholder {
   color: white;
   font-size: 1.2rem;
@@ -47,6 +52,24 @@ input::placeholder {
   background-color: rgba(0, 0, 0, 0.628);
  display: none;
 }
+
+::-webkit-scrollbar {
+  width: 3px; 
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(9, 9, 9, 0.4); 
+  border-radius: 4px; /* Makes the scrollbar edges rounded */
+}
+::-webkit-scrollbar-horizontal {
+  height: 3px; 
+}
+
+
+
 
 @media (max-width: 600px) {
   input::placeholder {

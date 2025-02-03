@@ -3,8 +3,8 @@ import Image from "next/image";
 import React from "react";
 import { WobbleCard } from "@/components/ui/wobble-card";
 import Cobe from "./Cobe";
-import noteimg from  "@/public/notepad.png"
-import cardimage from "@/public/cardimage.png"
+// import noteimg from  "@/public/notepad.png"
+// import cardimage from "@/public/cardimage.png"
 
 export function WobbleCardHero() {
   return (
@@ -21,13 +21,13 @@ export function WobbleCardHero() {
           Capture your thoughts, note down ideas, and keep track of what's important all in one place. 
           </p>
         </div>
-        <Image
+        {/* <Image
           src={noteimg}
           width={500}
           height={500}
           alt="linear demo image"
           className="absolute -right-4 lg:-right-[20%]  -bottom-10 object-contain rounded-2xl"
-        />
+        /> */}
       </WobbleCard>
       <WobbleCard containerClassName="col-span-1 min-h-[300px]">
         <h2 className="max-w-80  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
@@ -46,13 +46,13 @@ export function WobbleCardHero() {
           Stay up to date with the top five news stories across all genres from sports to entertainment. Get the latest updates all in one place!
           </p>
         </div>
-        <Image
+        {/* <Image
           src={cardimage}
           width={500}
           height={300}
           alt="linear demo image"
           className="absolute -right-4 lg:-right-[40%]  max-sm:block sm:hidden max filter -bottom-0 object-contain rounded-2xl"
-        />
+        /> */}
         <div className="top-[0%]  h-full max-sm:hidden right-[0%] absolute">
           <Cobe />
         </div>

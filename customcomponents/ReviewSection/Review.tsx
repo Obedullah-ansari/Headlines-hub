@@ -3,9 +3,8 @@ import StarRating from "./StarRating";
 import fetchReviews from "@/app/reviews/reviewsfun";
 import { submitReviewsfun } from "@/app/reviews/reviewsubmitfun";
 import { useDispatch } from "react-redux";
-import Modaloverlay from "./Modaloverlay";
+import Modaloverlay from "./../Modaloverlay";
 import deleteReviewfun from "@/app/reviews/deleteReviewfun";
-import { useSelector } from "react-redux";
 
 
 interface Submitdata {

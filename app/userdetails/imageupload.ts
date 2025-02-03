@@ -8,10 +8,10 @@ export default async function handleImageUpload(file: File): Promise<string | nu
       }
   
       const formData = new FormData();
-      formData.append("photo", file);
+      formData.append("image", file);
   
-      const response = await fetch(`${URL}api/v1/auth/updateProfile`, {
-        method: "PATCH",
+      const response = await fetch(`${URL}api/v1/image/uploaduserimage`, {
+        method: "POST",
         headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -21,7 +21,7 @@ export default async function handleImageUpload(file: File): Promise<string | nu
    
       if (response.ok) {
         const updatedData = await response.json();
-        return `${URL}uploads/users/${updatedData.data.user.photo}`;
+        return updatedData.imageUrl
       } else {
         const errorMessage = await response.text();
         throw new Error(errorMessage || "Image upload failed");

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import fetchReviews from "@/app/reviews/reviewsfun";
-import Reviewcard from "@/customcomponents/ReviewCard";
+import Reviewcard from "@/customcomponents/ReviewSection/ReviewCard";
 import { useSelector } from "react-redux";
 import type { RootState } from "@/redux/store";
 import next from "@/public/next.png"

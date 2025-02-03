@@ -1,13 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import logo from "@/public/newspaper.png";
 import toi from "@/public/toi.png";
 import th from "@/public/th.jpeg";
 import ht from "@/public/ht.jpeg";
 import globe from "@/public/earth.png";
 import nationla from "@/public/flag.png";
 import notepad from "@/public/memo.png";
-import voice from "@/public/minon.png";
+// import voice from "@/public/minon.png";
 
 import { motion, useAnimation } from "framer-motion";
 const Navbar: React.FC<{
@@ -111,14 +110,14 @@ const Navbar: React.FC<{
           </div>
 
           <div className="h-[5rem] cursor-pointer flex gap-1 justify-start items-center w-full">
-            <Image src={voice} alt="" className="w-[2.5rem] rounded-full" />
-            <motion.span
+            {/* <Image src={voice} alt="" className="w-[2.5rem] rounded-full" /> */}
+            {/* <motion.span
               initial={{ opacity: 0, x: "0%" }}
               whileHover={{ x: "10%", transition: { duration: 0.2 } }}
               animate={controls}
             >
               voice
-            </motion.span>
+            </motion.span> */}
           </div>
         </motion.div>
       </motion.div>
